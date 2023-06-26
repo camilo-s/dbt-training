@@ -12,7 +12,8 @@ final as (
     select
         orders.order_id,
         orders.customer_id,
-        payments.amount
+        payments.amount,
+        payments.status as payment_status
     from orders
     left join payments using (order_id)
 )
